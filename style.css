@@ -1,6 +1,17 @@
 body {
 	box-sizing:border-box;
+	background-color: #69a1d0;
 }
 *, *:before, *:after {
 	box-sizing:inherit;
+}
+
+#formsColumnContainer {
+	display: flex;
+	flex-flow: row no-wrap;
+}
+
+.formsColumn {
+	display: flex;
+	flex-flow: column no-wrap;
 }
