@@ -5,13 +5,22 @@ body {
 	color: #EDEDED;
 	margin: 0;
 	padding: 0;
+	font-size: 16px;
 }
 *, *:before, *:after {
 	box-sizing:inherit;
+	font-size: inherit;
+	color: inherit;
 }
 
-p {
-	margin: 0;
+p.inputNames {
+	margin: 0 0 5px 0;
+	font-size: 14px;
+	font-variant: small-caps;
+}
+
+option {
+	padding: 20px;
 }
 
 ::placeholder{
@@ -19,10 +28,16 @@ p {
 	font-style: italic;
 }
 
+textarea {
+	height: 100px;
+	max-width: 100%;
+}
+
 #formsColumnContainer {
 	display: flex;
 	flex-flow: row no-wrap;
 	justify-content: center;
+	background-color: #47a /* For Testing Purposes*/
 }
 
 @media (max-width:700px){ /* Currently For Testing Purposes*/
@@ -34,11 +49,11 @@ p {
 .formsColumn {
 	display: flex;
 	flex-flow: column wrap;
-	width: 400px;
+	width: 300px;
 	background-color: #0F0;
 	background-color: rgba(0,255,0, .5); /* For Testing Purposes*/
 	margin: 20px;
-	padding: 10px;
+	padding: 0;
 }
 
 .placeholderBox { /* For Testing Purposes*/
@@ -47,18 +62,18 @@ p {
 	background-color: #F00;
 }
 .inputWrapper {
-	margin: 5px;
+	margin: 12px 0;
 }
 
 .inputWrapper input, .inputWrapper select, .inputWrapper textarea {
 	border: 0;
 	outline: 0;
 	border: 2px solid #EDEDED;
-	padding: 5px;
-	width: 90%;
+	padding: 8px;
+	width: 100%;
 	background-color: rgba(0,0,0,0);
 }
 
-.inputWrapper input:focus {
+.inputWrapper input:focus, .inputWrapper select:focus, .inputWrapper textarea:focus {
 	border-color: #2E5E8A;
 }
