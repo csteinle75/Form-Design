@@ -1,17 +1,64 @@
 body {
 	box-sizing:border-box;
 	background-color: #69a1d0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #EDEDED;
+	margin: 0;
+	padding: 0;
 }
 *, *:before, *:after {
 	box-sizing:inherit;
 }
 
+p {
+	margin: 0;
+}
+
+::placeholder{
+	color: #2E5E8A;
+	font-style: italic;
+}
+
 #formsColumnContainer {
 	display: flex;
 	flex-flow: row no-wrap;
+	justify-content: center;
+}
+
+@media (max-width:700px){ /* Currently For Testing Purposes*/
+	body {
+		background-color: #00F;
+	}
 }
 
 .formsColumn {
 	display: flex;
-	flex-flow: column no-wrap;
+	flex-flow: column wrap;
+	width: 400px;
+	background-color: #0F0;
+	background-color: rgba(0,255,0, .5); /* For Testing Purposes*/
+	margin: 20px;
+	padding: 10px;
+}
+
+.placeholderBox { /* For Testing Purposes*/
+	height: 100px;
+	margin: 5px 0;
+	background-color: #F00;
+}
+.inputWrapper {
+	margin: 5px;
+}
+
+.inputWrapper input, .inputWrapper select, .inputWrapper textarea {
+	border: 0;
+	outline: 0;
+	border: 2px solid #EDEDED;
+	padding: 5px;
+	width: 90%;
+	background-color: rgba(0,0,0,0);
+}
+
+.inputWrapper input:focus {
+	border-color: #2E5E8A;
 }
