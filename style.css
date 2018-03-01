@@ -15,7 +15,7 @@ body {
 
 p.inputNames {
 	margin: 0 0 5px 0;
-	font-size: 14px;
+	font-size: 13px;
 	font-variant: small-caps;
 }
 
@@ -29,51 +29,92 @@ option {
 }
 
 textarea {
-	height: 100px;
+	height: 110px;
 	max-width: 100%;
+	min-width: 100%;
 }
 
 #formsColumnContainer {
 	display: flex;
 	flex-flow: row no-wrap;
 	justify-content: center;
-	background-color: #47a /* For Testing Purposes*/
-}
-
-@media (max-width:700px){ /* Currently For Testing Purposes*/
-	body {
-		background-color: #00F;
-	}
+	/* background-color: #47a For Testing Purposes*/
 }
 
 .formsColumn {
 	display: flex;
 	flex-flow: column wrap;
 	width: 300px;
-	background-color: #0F0;
-	background-color: rgba(0,255,0, .5); /* For Testing Purposes*/
+	min-width: 200px;
+	background-color: rgba(0,255,0, .0); /* For Testing Purposes*/
 	margin: 20px;
 	padding: 0;
 }
 
-.placeholderBox { /* For Testing Purposes*/
-	height: 100px;
-	margin: 5px 0;
-	background-color: #F00;
-}
 .inputWrapper {
-	margin: 12px 0;
+	margin: 10px 0;
+	position: relative;
 }
 
 .inputWrapper input, .inputWrapper select, .inputWrapper textarea {
 	border: 0;
 	outline: 0;
 	border: 2px solid #EDEDED;
-	padding: 8px;
+	padding: 9px 8px;
 	width: 100%;
+	min-width: 100%;
 	background-color: rgba(0,0,0,0);
+	transition: border-color .75s;
+	transition: color 2s;
 }
 
-.inputWrapper input:focus, .inputWrapper select:focus, .inputWrapper textarea:focus {
+.inputWrapper input:hover, .inputWrapper select:hover, .inputWrapper textarea:hover {
+	color: #000;
+}
+.inputWrapper input:focus, .inputWrapper select:focus, .inputWrapper textarea:focus {	
 	border-color: #2E5E8A;
+	position: relative;
+	animation-name: triangle;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+
+@keyframes triangle{
+	0% {top: 0; left: 0; right: 0; bottom: 0  }
+	25% {
+		top: 100px;
+		left: 100px;
+		bottom: 0;
+		right: 0;
+	}
+	50% {
+		top: 100px;
+		left: -100px;
+		bottom: 0;
+		right: 0;
+	}
+
+	100% {
+		top: 0;
+		left: 0;
+	}
+}
+
+@media (max-width:768px){ /*Currently Testing */
+	body {
+		display: flex;
+		justify-content: center;
+	}
+
+
+	#formsColumnContainer {
+		flex-flow: column wrap;
+		justify-content: center;
+		width: 500px;
+	}
+	.formsColumn {
+		width: auto;
+		max-width: 500px;
+	}
 }
